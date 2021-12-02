@@ -1,0 +1,145 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* variables */
+:root {
+  --clr-primary-cyan: hsl(179, 62%, 43%);
+  --clr-primary-yellow: hsl(71, 73%, 54%);
+  --clr-secondary-grey: hsl(204, 43%, 93%);
+  --clr-secondary-blue: hsl(218, 22%, 67%);
+}
+
+/* Typo */
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  color: var(--clr-secondary-grey);
+}
+
+.title {
+  color: var(--clr-primary-cyan);
+}
+
+.title,
+.content__title,
+.pricing {
+  font-weight: 700;
+}
+
+.content__title--yellow {
+  color: var(--clr-primary-yellow);
+  font-size: 1.125rem;
+}
+
+.content__info--grey {
+  color: var(--clr-secondary-blue);
+}
+
+.pricing {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+.pricing small {
+  font-size: 1rem;
+  margin-left: 0.5em;
+}
+
+.pricing small,
+.why-us {
+  --clr-secondary-grey: hsl(201, 71%, 89%);
+  color: var(--clr-secondary-grey);
+}
+
+.btn {
+  cursor: pointer;
+  height: 3.125em;
+  width: 100%;
+  background-color: var(--clr-primary-yellow);
+  border-radius: 8px;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* sections layout */
+.content--dark-green {
+  background-color: var(--clr-primary-cyan);
+}
+.content--light-green {
+  --clr-primary-cyan: hsl(179, 55%, 60%);
+  background-color: var(--clr-primary-cyan);
+}
+
+.content {
+  padding: 2.125em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+}
+
+.attribution {
+  color: var(--clr-primary-cyan);
+  text-align: center;
+  margin: 3em;
+  font-size: 1rem;
+}
+
+/* Screen changes */
+
+@media (min-width: 42.5rem) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+
+  .content--white {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 65rem) {
+  body {
+    font-size: 1.225rem;
+  }
+
+  .why-us {
+    max-width: 40ch;
+  }
+
+  .btn:hover,
+  .btn:focus {
+    --clr-primary-yellow: hsl(71, 62%, 47%);
+    background-color: var(--clr-primary-yellow);
+  }
+
+  footer {
+    font-size: 2rem;
+  }
+}
